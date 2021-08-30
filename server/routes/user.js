@@ -20,6 +20,7 @@ router.get("/auth", auth, (req, res) => {
     });
 });
 router.post("/register", (req, res) => {
+    console.log(req.body)
     const user = new User(req.body);
     user.save((err, doc) => {
         if (err) return res.json({ success: false, err });
